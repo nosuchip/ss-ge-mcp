@@ -1,0 +1,20 @@
+{
+  "name": "ss-ge-mcp",
+  "version": "1.0.0",
+  "description": "MCP-сервер над home.ss.ge — досками недвижимости Грузии. Прозрачный stateless-прокси.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "bin": { "ss-ge-mcp": "src/index.mjs" },
+  "main": "src/index.mjs",
+  "files": ["src", "docs", "README.md", "LICENSE"],
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node test/smoke.mjs"
+  },
+  "keywords": ["mcp", "model-context-protocol", "real-estate", "georgia", "tbilisi", "ss.ge"],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  }
+}
