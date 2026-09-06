@@ -8,11 +8,36 @@ MCP-сервер над [home.ss.ge](https://home.ss.ge)
 ## Установка
 
 ```bash
-git clone <repo> ss-ge-mcp && cd ss-ge-mcp && npm install
-claude mcp add ss-ge --scope user -- node "$PWD/src/index.mjs"
+claude mcp add ss-ge --scope user -- npx -y ss-ge-mcp@1
 ```
 
-Проверить: `npm test` (ходит в сеть по-настоящему).
+Нужен Node >= 20. Клонировать и ставить вручную ничего не надо: `npx` сам скачает пакет
+из npm и закеширует. `@1` фиксирует мажорную версию -- обновления внутри неё приезжают
+сами, ломающий релиз молча не подменит сервер.
+
+Для клиентов с JSON-конфигом (Claude Desktop, Cursor, Windsurf):
+
+```json
+{
+  "mcpServers": {
+    "ss-ge": {
+      "command": "npx",
+      "args": ["-y", "ss-ge-mcp@1"]
+    }
+  }
+}
+```
+
+<details>
+<summary>Из исходников</summary>
+
+```bash
+git clone https://github.com/nosuchip/ss-ge-mcp && cd ss-ge-mcp && npm install
+claude mcp add ss-ge --scope user -- node "$PWD/src/index.mjs"
+npm test   # смоук-тест, ходит в сеть по-настоящему
+```
+
+</details>
 
 ## Инструменты
 
@@ -77,4 +102,4 @@ JWT в `__NEXT_DATA__` каждой страницы. Никаких чужих 
 
 ## Лицензия
 
-GPLv3
+MIT — см. [`LICENSE`](LICENSE).

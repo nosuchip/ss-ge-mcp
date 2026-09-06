@@ -4,6 +4,15 @@
   "description": "MCP-сервер над home.ss.ge — досками недвижимости Грузии. Прозрачный stateless-прокси.",
   "type": "module",
   "license": "MIT",
+  "author": "Alex Xela",
+  "homepage": "https://github.com/nosuchip/ss-ge-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nosuchip/ss-ge-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nosuchip/ss-ge-mcp/issues"
+  },
   "engines": { "node": ">=20" },
   "bin": { "ss-ge-mcp": "src/index.mjs" },
   "main": "src/index.mjs",
